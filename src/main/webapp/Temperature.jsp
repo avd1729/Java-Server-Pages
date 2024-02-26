@@ -27,7 +27,7 @@
         fahr = Double.parseDouble(fahrStr);
     }
 
-    double ans2 = (5/9) * (fahr - 32);
+    double ans2 = (fahr - 32) * 5/9;
 
 %>
 
