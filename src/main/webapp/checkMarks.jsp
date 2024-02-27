@@ -28,10 +28,18 @@
     if(passedAll) {
         request.setAttribute("marks", marks);
         RequestDispatcher rd = (RequestDispatcher) request.getRequestDispatcher("calculateGrade.jsp");
-        rd.forward((ServletRequest) request, (ServletResponse) response);
+        try {
+            rd.forward((ServletRequest) request, (ServletResponse) response);
+        } catch (ServletException e) {
+            throw new RuntimeException(e);
+        }
     } else {
         request.setAttribute("failedSubjects", failedSubjects);
         RequestDispatcher rd = (RequestDispatcher) request.getRequestDispatcher("displayFailure.jsp");
-        rd.include((ServletRequest) request, (ServletResponse) response);
+        try {
+            rd.include((ServletRequest) request, (ServletResponse) response);
+        } catch (ServletException e) {
+            throw new RuntimeException(e);
+        }
     }
 %>
