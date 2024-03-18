@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+// 15th question
 public class JDBC {
     public static void main(String[] args) {
         Connection conn = null;
